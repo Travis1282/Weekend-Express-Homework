@@ -18,6 +18,9 @@
 		Password: <input type='text' name='password' value="<%=agent.password%>"></br>
 		Sales Volume:  <input type='number' name='salesVolume' value="<%=agent.salesVolume%>"></br>
 		<input type="submit" name="" value="Update Profile" />
+		<form action='/agents/<%= agent.id %>?_method=DELETE' method='POST'>
+				<button>Delete Profile</button>
+		</form>
 
 	</form>
 

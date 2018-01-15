@@ -66,6 +66,18 @@ router.put('/:id', (req, res) => {
 })
 
 
+
+//////////////////////// DELETE ////////////////////////
+router.delete('/:id', (req, res) => {
+  // console.log('hitting delete')
+  Agent.findByIdAndRemove(req.params.id, (err, data)=>{
+  	if (err){ console.log(err);}
+  	else { res.redirect('/agents')}
+  })
+})
+
+
+
 //////////////////////// EXPORT ////////////////////////
 module.exports = router;
 
