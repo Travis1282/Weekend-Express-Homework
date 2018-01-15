@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit <%=agent.name%>'s profile page</title>
+</head>
+<body>
+
+	<nav>
+		<a href="/agents">Go Back Agent List</a>
+	</nav>
+
+	<h1>Edit <%=agent.name%>'s profile page</h1>
+
+	<form action="/agents/<%=agent.id%>?_method=PUT" method="POST">
+
+		Name: <input type="text" name="name" value="<%=agent.name%>"></br>
+		E-mail: <input type='text' name='eMail' value="<%=agent.eMail%>"></br>
+		Password: <input type='text' name='password' value="<%=agent.password%>"></br>
+		Sales Volume:  <input type='number' name='salesVolume' value="<%=agent.salesVolume%>"></br>
+		<input type="submit" name="" value="Update Profile" />
+
+	</form>
+
+
+</body>
+</html>

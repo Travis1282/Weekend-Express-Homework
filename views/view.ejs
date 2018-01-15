@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><% agent.name%></title>
+</head>
+<body>
+		<nav>
+			<a href="/agents">Go Back Agent List</a>
+		</nav>
+
+
+	<h1><%=agent.name%>'s profile page</h1>
+
+
+<ul>
+		<li>
+			Name: <%= agent.name %></br>
+		</li>
+		<li>
+			E-mail: <%= agent.eMail %></br>
+		</li>
+		<li>
+			Password: <%= agent.password %></br>
+		</li>
+		<li>
+			Sales Volume:  <%= agent.salesVolume %></br>
+		</li>
+</ul>
+			<a href="/agents/<%= agent.id%>/edit">EDIT</a>
+
+
+</body>
+</html>

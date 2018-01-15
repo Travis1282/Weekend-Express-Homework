@@ -38,16 +38,42 @@ router.post('/', (req, res) => {
 
 
 //////////////////////// PROFILE PAGE VIEW ////////////////////////
-
 router.get('/:id', (req, res) =>{
 	// get agent from database 
-	Agnet.findById(req.params.id, (error, agentFound) => {
-		res.render('show.ejs', {agent: agentFound})
+	Agent.findById(req.params.id, (error, agent) => {
+		res.render('view.ejs', {agent: agent})
 	})
 })
 
 
 
+//////////////////////// EDIT PAGE VIEW ////////////////////////
+
+//----------------> GET DATA FOR DISPLAY
+router.get('/:id/edit', (req, res) => {
+	Agent.findById(req.params.id, (err, agent) =>{
+		res.render('edit.ejs', {agent: agent})
+	})
+})
+
+//----------------> SEND NEW DATA TO THE DB
+
+router.put('/:id', (req, res) => {
+  Agent.findById(req.params.id, req.body, (err, updatedModel) => {
+  	res.redirect('/agents')
+  })
+
+})
+
 
 //////////////////////// EXPORT ////////////////////////
 module.exports = router;
+
+
+
+
+
+
+
+
+
