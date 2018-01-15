@@ -7,8 +7,8 @@ const 	express = require('express'),
 router.get('/', (req, res) => {
 	Agent.find({},(err, allAgents) => {
 		if(err) console.log(err);
-		console.log(allAgents)// agents in terminal
-		//res.render('index.ejs', { agents: allAgents })
+		// console.log(allAgents)// agents in terminal
+		res.render('index.ejs', { agents: allAgents })
 	})
 
 })
